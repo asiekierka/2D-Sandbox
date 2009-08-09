@@ -2,7 +2,7 @@ unit maps;
 
 interface
 
-uses paszlib;
+uses paszlib, crt;
 
 const
 	MAX_TYPES=2;
@@ -97,6 +97,10 @@ var
 begin
  Write('Loading ',fn,'...   ');
  fmap := gzopen(pchar(fn),pchar('rb'));
+ if fmap=nil then begin
+  WriteLN('ERR: Cannot open ',fn,'.');
+  Halt;
+ end;
  gzrewind(fmap);
  mt := gzgetc(fmap);
  if LongInt(mt) < 2 then
