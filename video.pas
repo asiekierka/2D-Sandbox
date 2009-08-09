@@ -236,13 +236,15 @@ begin
 end;
 
 procedure init_SDL;
+const
+ pathmod = {$IFDEF WIN32}'\'{$ELSE}'/'{$ENDIF};
 begin
  SDL_Init(SDL_INIT_VIDEO); // Initialize the video SDL subsystem
  scr:=SDL_SetVideoMode(SCR_WIDTH, SCR_HEIGHT, 24, SDL_HWSURFACE); // Create a software window of 640x480x8 and assign to scr
- tilemap := SDL_LoadBMP('gfx\tilemap.bmp');
- slidermap := IMG_Load('gfx\slider.gif');
- fontmap := IMG_Load('gfx\font.gif');
- tmlen := (tilemap^.w div 16); 
+ tilemap := SDL_LoadBMP('gfx'+pathmod+'tilemap.bmp');
+ slidermap := IMG_Load('gfx'+pathmod+'slider.gif');
+ fontmap := IMG_Load('gfx'+pathmod+'font.gif');
+ tmlen := (tilemap^.w div 16);
  maskmap := SDL_CreateRGBSurface(SDL_HWSURFACE, SCR_WIDTH, SCR_HEIGHT, 24,0,0,0,0);
  offx := 0;
  offy := 0;
