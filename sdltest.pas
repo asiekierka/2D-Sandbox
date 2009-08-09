@@ -230,5 +230,5 @@ begin
    end;
  end;
  end;
- quit_SDL;
+ ExitApp;
 end.
