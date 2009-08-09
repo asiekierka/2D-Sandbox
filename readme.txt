@@ -1,4 +1,8 @@
-Run blankmap.exe to generate the map FIRST. Save it as "testmap.dat" ONLY.
+Run blankmap to generate the map FIRST (or use the included testmap.dat)
+
+Params:
+sdltest (map name)
+If no map name specified uses "testmap.dat".
 
 Controls for sdltest:
 IN MAP EDITOR:
@@ -11,6 +15,7 @@ D - toggle between maps
 mousewheel - select tiles
 left mouse button - place tile
 arrow keys - scroll map (if bigger than 40x30)
+P - pause/unpause
 
 IN COLOR EDITOR:
 C - switch between tile/color editor
