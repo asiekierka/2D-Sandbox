@@ -9,8 +9,7 @@ NOT QUITE USED SOURCE:
 player.pas - player handling
 
 UNUSED/BROKEN STUFF:
-collision.pas - broken collision support
-misc.pas - 1 routine is an unused routine.
+broken\collision.pas - broken collision support
 
 OTHER STUFF:
 gfx\... - graphics for my game
