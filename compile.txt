@@ -1,0 +1,8 @@
+In order to compile, you need Free Pascal.
+
+Compilation:
+fpc sdltest.pas
+fpc blankmap.pas
+
+You need to have SDL and SDL_image installed. If you use Windows, DLLs are supplied in the "misc" directory.
+This app uses crt, paszlib, sdl and sdl_image.
