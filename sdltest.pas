@@ -37,7 +37,7 @@ begin
   process_map;
   render_map;
   doUpdate := false;
-  Delay(16);
+  SDL_Delay(16);
   framecnt := framecnt+1;
   SDL_GetMouseState(mousex,mousey);
    if SDL_LMB_HELD = true then
