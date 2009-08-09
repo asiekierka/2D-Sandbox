@@ -1,0 +1,20 @@
+SOURCE CODE:
+
+sdltest.pas - the main source file of 2d sandbox's map editor.
+video.pas - video routines
+maps.pas - map routines
+blankmap.pas - blank map creator
+
+NOT QUITE USED SOURCE:
+player.pas - player handling
+
+UNUSED/BROKEN STUFF:
+collision.pas - broken collision support
+misc.pas - 1 routine is an unused routine.
+
+OTHER STUFF:
+gfx\... - graphics for my game
+misc\windows_sdl_dlls.zip - in case you need them!
+
+TODO:
+- split all the mapedit-only parts into a separate .pas file
