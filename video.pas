@@ -4,7 +4,8 @@ interface
 
 uses sdl, sdl_image, sysutils,
      maps in 'maps.pas',
-     player in 'player.pas';
+     player in 'player.pas',
+     platform in 'platform.pas';
 const
 	SCR_WIDTH = 640;
 	SCR_HEIGHT = 480;
@@ -236,8 +237,6 @@ begin
 end;
 
 procedure init_SDL;
-const
- pathmod = {$IFDEF WIN32}'\'{$ELSE}'/'{$ENDIF};
 begin
  SDL_Init(SDL_INIT_VIDEO); // Initialize the video SDL subsystem
  scr:=SDL_SetVideoMode(SCR_WIDTH, SCR_HEIGHT, 24, SDL_HWSURFACE); // Create a software window of 640x480x8 and assign to scr
