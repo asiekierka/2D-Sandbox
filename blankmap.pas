@@ -37,8 +37,8 @@ begin
  end;
  Write('Filename?: ');
  readln(fn2);
- Write('Saving ',fn,'...');
  fn := PChar(fn2);
+ Write('Saving ',fn,'...');
  fmap := gzopen(fn,pchar('wb5'));
  if fmap=nil then begin
   WriteLN('ERR: Cannot open ',fn2,'.');
