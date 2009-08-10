@@ -93,7 +93,13 @@ begin
        currb.id := ((currb.id + 1) mod tmlen);
        doUpdate := true;
       end;
-      SDL_BUTTON_LEFT: SDL_LMB_HELD := true;
+      SDL_BUTTON_LEFT: begin
+       SDL_LMB_HELD := true;
+       if (mousex > (SCR_WIDTH-22)) and (mousey > (SCR_HEIGHT-22)) then begin
+        currb.id := ((currb.id + 1) mod tmlen);
+        doUpdate := true;
+       end;
+      end;
      end;
     end;
     SDL_MOUSEBUTTONUP:
