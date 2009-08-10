@@ -1,8 +1,10 @@
 unit maps;
 
+{$mode objfpc} 
+
 interface
 
-uses paszlib, crt;
+uses paszlib, crt, files in 'files.pas', sysutils;
 
 const
 	MAX_TYPES=2;
@@ -60,7 +62,13 @@ var
  i,j,k: dword;
 begin
  Write('Saving test map...   ');
- fmap := gzopen(pchar(fn),pchar('wb5'));
+ try fmap := f_gzopen(pchar(fn),pchar('wb5'));
+ except
+  on EOpenException do begin
+   WriteLn('Error while opening file');
+   Halt;
+  end;
+ end;
  gzrewind(fmap);
  gzputc(fmap,Char(2));
  gzputc(fmap,Char(mw mod 256));
@@ -96,7 +104,13 @@ var
  i,j,k: dword;
 begin
  Write('Loading ',fn,'...   ');
- fmap := gzopen(pchar(fn),pchar('rb'));
+ try fmap := f_gzopen(pchar(fn),pchar('rb'));
+ except
+  on EOpenException do begin
+   WriteLn('Error while opening file');
+   Halt;
+  end;
+ end;
  if fmap=nil then begin
   WriteLN('ERR: Cannot open ',fn,'.');
   Halt;

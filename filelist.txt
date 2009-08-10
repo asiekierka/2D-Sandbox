@@ -4,6 +4,8 @@ sdltest.pas - the main source file of 2d sandbox's map editor.
 video.pas - video routines
 maps.pas - map routines
 blankmap.pas - blank map creator
+platform.pas - platform-related stuff
+files.pas - exception-based file reading
 
 NOT QUITE USED SOURCE:
 player.pas - player handling
