@@ -8,6 +8,9 @@ var
  fn2:ansistring;
 
 begin
+ mx := 0;
+ my := 0;
+ md := 0;
  while (mx<3) or (mx>1024) do begin
  Write('X size?: ');
  readln(mx);
