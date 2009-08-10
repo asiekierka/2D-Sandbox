@@ -40,6 +40,10 @@ begin
  Write('Saving ',fn,'...');
  fn := PChar(fn2);
  fmap := gzopen(fn,pchar('wb5'));
+ if fmap=nil then begin
+  WriteLN('ERR: Cannot open ',fn2,'.');
+  Halt;
+ end;
  gzrewind(fmap);
  gzputc(fmap,Char(2));
  gzputc(fmap,Char(mx mod 256));
