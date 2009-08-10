@@ -8,7 +8,7 @@ uses paszlib, crt, files in 'files.pas', sysutils;
 
 const
 	MAX_TYPES=2;
-        typnames: array[0..1] of ansistring = ('Solid','Water');
+        typnames: array[0..1] of ansistring = ('Solid','Liquid');
 
 type
 	maprec=packed record
