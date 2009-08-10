@@ -111,10 +111,6 @@ begin
    Halt;
   end;
  end;
- if fmap=nil then begin
-  WriteLN('ERR: Cannot open ',fn,'.');
-  Halt;
- end;
  gzrewind(fmap);
  mt := gzgetc(fmap);
  if LongInt(mt) < 2 then
