@@ -1,5 +1,6 @@
 program blankmap;
-uses crt,paszlib;
+{$mode objfpc} 
+uses crt,paszlib, files in 'files.pas';
 
 var
  i,mx,my,md,px,py,pd:longint;
@@ -42,10 +43,12 @@ begin
  readln(fn2);
  fn := PChar(fn2);
  Write('Saving ',fn,'...');
- fmap := gzopen(fn,pchar('wb5'));
- if fmap=nil then begin
-  WriteLN('ERR: Cannot open ',fn2,'.');
-  Halt;
+ try fmap := f_gzopen(pchar(fn),pchar('rb'));
+ except
+  on EOpenException do begin
+   WriteLn('Error while opening file');
+   Halt;
+  end;
  end;
  gzrewind(fmap);
  gzputc(fmap,Char(2));
